@@ -1,2 +1,4 @@
 theme: jekyll-theme-slate
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://pro465.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:title/
