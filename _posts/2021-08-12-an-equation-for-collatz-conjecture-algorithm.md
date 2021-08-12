@@ -3,7 +3,6 @@ layout: post
 title: "An Equation for the Collatz conjecture algorithm"
 date: 2021-08-12 16-15-00 +0530
 categories: algorithm maths CS
-permalink: /equation-for-cca/
 ---
 
 <html>
