@@ -1,4 +1,4 @@
 theme: jekyll-theme-slate
-baseurl: /blog
+baseurl: /blog/
 permalink: /:title/
 markdown: kramdown
