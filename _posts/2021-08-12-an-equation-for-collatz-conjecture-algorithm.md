@@ -1,9 +1,7 @@
----------
 layout: post
 title: "An Equation for the Collatz conjecture algorithm"
-date: 2021-08-12 +0530
+date: 2021-08-12
 categories: algorithm maths CS
----------
 
 <html>
     <head>
