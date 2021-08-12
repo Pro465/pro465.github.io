@@ -11,8 +11,8 @@ today i found a way to represent the collatz conjecture(which was an algorithm t
 
 $$3^n\cdot x + \displaystyle\sum_{i=0}^{n}{3^i \cdot 2^{\sum_{j=n}^{n - i - 1} a_j}}= 2^k$$
 
-where \(a_0\) is a whole number, and \(a_1, a_2, ... a_n\), \(k\), and \(x\) are positive integers.
+where <math>a_0</math> is a whole number, and <math>a_1, a_2, ... a_n</math>, <math>k</math>, and <math>x</math> are positive integers.
 
 (I am too lazy to document how i got there, but i will expand it in the following days).
 
-now the only thing left is to prove that this equation holds true for any \(x\).
+now the only thing left is to prove that this equation holds true for any <math>x</math>.
