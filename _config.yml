@@ -1,3 +1,4 @@
 theme: jekyll-theme-slate
-permalink: /blog/:title/
+baseurl: /blog
+permalink: /:title/
 markdown: kramdown
