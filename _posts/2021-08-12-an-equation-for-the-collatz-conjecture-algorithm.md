@@ -7,11 +7,23 @@ categories: algorithm maths CS
 usemathjax: true
 ---
 
-today i found a way to represent the collatz conjecture(which was an algorithm till now) as an equation:
+today i found a way to represent the collatz conjecture(which was an algorithm till now) as an equation.
 
-$$ 3^n \cdot 2 ^ {1 + \sum_{i=0}^{n} a_i} \cdot (3y + 1) = 2^k $$
+if we define $y$ in terms of $x$, the initial value of the Collatz conjecture algorithm:
 
-where $a_0$ is a whole number, and $a_1, a_2, ... a_n$, $k$, and $2^a_0 \cdot y = x$ are positive integers.
+```
+$$ x = 2^p \cdot y $$
+
+where $p$ is a whole number, and $y$ is a positive integer
+```
+
+then, we can represent Collatz conjecture as:
+
+```
+$$ 3^n \cdot 2 ^ {1 + \sum_{i=0}^{n} a_i} \cdot (3y + 1) = 2^k, a \in \mathbb{Z}^n $$
+
+where $k$ and $n$ are positive integers, and $a_0 := p$
+```
 
 (I am too lazy to document how i got there, but i will expand it in the following days).
 
