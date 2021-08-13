@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "An Equation for the Collatz conjecture algorithm"
 description: "I found a way to represent collatz conjecture as an equation"
 date: 2021-08-12 16:15:00 +0530
