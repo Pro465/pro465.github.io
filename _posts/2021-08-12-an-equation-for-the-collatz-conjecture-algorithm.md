@@ -11,23 +11,19 @@ today i found a way to represent the collatz conjecture(which was an algorithm t
 
 if we define $y$ in terms of $x$, the initial value of the Collatz conjecture algorithm:
 
-%{ raw %}
-```
+<div>
 $$ x = 2^p \cdot y $$
 
 where $p$ is a whole number, and $y$ is a positive integer
-```
-{% endraw %}
+</div>
 
 then, we can represent Collatz conjecture as:
 
-{% raw %}
-```
+<div>
 $$ 3^n \cdot 2 ^ {1 + \sum_{i=0}^{n} a_i} \cdot (3y + 1) = 2^k, a \in \mathbb{Z}^n $$
 
 where $k$ and $n$ are positive integers, and $a_0 := p$
-```
-{% endraw %}
+</div>
 
 (I am too lazy to document how i got there, but i will expand it in the following days).
 
