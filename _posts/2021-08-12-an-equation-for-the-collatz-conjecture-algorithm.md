@@ -15,8 +15,8 @@ if we define $y$ in terms of $x$, the initial value of the Collatz conjecture al
 $$ x = 2^p \cdot y $$
 </div>
 where,  
-     $ p \in \mathbb{N}_0 $,  
-     $ y \in \mathbb{N}_0 $  
+    $ p \in \mathbb{N}_0 $,  
+    $ y \in \mathbb{N}_0 $  
 
 then, we can represent Collatz conjecture as:
 
@@ -25,10 +25,10 @@ $$ 3^n \cdot 2 ^ {1 + \sum_{i=0}^{n} a_i} \cdot (3y + 1) = 2^k $$
 
 </div>
 where,  
-     $ a \in \mathbb{Z}^n $,  
-     $ n \in \mathbb{N} $,  
-     $ k \in \mathbb{N} $,  
-     $ a_0 := p $  
+    $ a \in \mathbb{Z}^n $,  
+    $ n \in \mathbb{N} $,  
+    $ k \in \mathbb{N} $,  
+    $ a_0 := p $  
 
 (I am too lazy to document how i got there, but i will expand it in the following days).
 
