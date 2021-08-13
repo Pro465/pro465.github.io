@@ -7,7 +7,7 @@ title: all posts
   {% for post in site.posts %}
     <li>
       <span>
-          <b><a href="{{ post.url }}">{{ post.title }}</a></b>:
+          <a href="{{ post.url }}">{{ post.title }}</a>:
           <i>{{ post.description }}</i>
       </span>
     </li>
