@@ -1,0 +1,3 @@
+remote_theme: pages-themes/slate
+markdown: kramdown
+permalink: /:title/
