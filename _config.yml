@@ -1,3 +1,3 @@
-theme: minima
+theme: jekyll-theme-cayman
 permalink: /:title/
 markdown: kramdown
