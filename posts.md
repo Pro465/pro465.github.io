@@ -1,6 +1,7 @@
 ---
 layout: default
 title: all posts
+description: A list of all posts with their desciptions
 ---
 
 <ul>
