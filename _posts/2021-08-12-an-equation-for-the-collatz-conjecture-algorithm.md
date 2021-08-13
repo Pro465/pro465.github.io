@@ -13,16 +13,21 @@ if we define $y$ in terms of $x$, the initial value of the Collatz conjecture al
 
 <div>
 $$ x = 2^p \cdot y $$
-
-where $p$ is a whole number, and $y$ is a positive integer
+where,
+     $ p \in \mathbb{N}_0 $,
+     $ y \in \mathbb{N}_0 $
 </div>
 
 then, we can represent Collatz conjecture as:
 
 <div>
-$$ 3^n \cdot 2 ^ {1 + \sum_{i=0}^{n} a_i} \cdot (3y + 1) = 2^k, a \in \mathbb{Z}^n $$
+$$ 3^n \cdot 2 ^ {1 + \sum_{i=0}^{n} a_i} \cdot (3y + 1) = 2^k $$
 
-where $k$ and $n$ are positive integers, and $a_0 := p$
+where,
+     $ n \in \mathbb{N}_0 $,
+     $ a \in \mathbb{Z}^n $,
+     $ k \in \mathbb{N} $,
+     $ a_0 := p $
 </div>
 
 (I am too lazy to document how i got there, but i will expand it in the following days).
