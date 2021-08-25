@@ -21,7 +21,7 @@ where,
 then, we can represent Collatz conjecture as:
 
 <div>
-$$ 3^n + \displaystyle \sum_{i=0}^n{3^i \cdot 2^{\sum_{j=0}^{n-i-1} a_i}} = 2^k $$
+$$ 3^n x + \displaystyle \sum_{i=0}^n{3^i \cdot 2^{\sum_{j=0}^{n-i-1} a_i}} = 2^k $$
 
 </div>
 where,  
