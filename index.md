@@ -2,11 +2,11 @@
 layout: default
 ---
 
-#About
+# About
 
 hi and welcome! this is my personal blogging site.
 
-#All posts
+# All posts
 <ul>
   {% for post in site.posts %}
     <li>
