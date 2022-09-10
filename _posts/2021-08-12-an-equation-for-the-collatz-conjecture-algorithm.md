@@ -1,4 +1,4 @@
-9---
+---
 layout: default
 title: "An Equation for the Collatz conjecture algorithm"
 description: "I found a way to represent collatz conjecture as an equation"
