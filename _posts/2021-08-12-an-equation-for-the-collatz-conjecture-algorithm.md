@@ -12,23 +12,23 @@ today i found a way to represent the collatz conjecture(which was an algorithm t
 if we define $y$ in terms of $x \in \mathbb{N}$, the initial value of the Collatz conjecture algorithm:
 
 <div>
-$$ x = 2^p \cdot y $$
+$$x = 2^p \cdot y$$
 </div>
 where,  
-    $ p \in \mathbb{N}_0 $,  
-    $ y \in \mathbb{N} $  
+    $p \in \mathbb{N}_0$,
+    $y \in \mathbb{N}$  
 
 then, we can represent Collatz conjecture as:
 
 <div>
-$$ 3^n x + \displaystyle \sum_{i=0}^n{3^i \cdot 2^{\sum_{j=0}^{n-i-1} a_j}} = 2^k $$
-
+$$3^n y + \displaystyle \sum_{i=0}^{n-1}{3^i \cdot 2^{\sum_{j=1}^{n-i} a_j}} = 2^k$$
 </div>
-where,  
-    $ a \in \mathbb{N}_0^n $,  
-    $ n \in \mathbb{N} $,  
-    $ k \in \mathbb{N} $,  
-    $ a_0 := p $  
+
+where,
+    $a \in \mathbb{N}_0^n$,
+    $n \in \mathbb{N}$,
+    $k \in \mathbb{N}$,
+    $a_1 := 0$  
 
 (I am too lazy to document how i got there, but i will expand it in the following days).
 
