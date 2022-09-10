@@ -1,4 +1,4 @@
----
+9---
 layout: default
 title: "An Equation for the Collatz conjecture algorithm"
 description: "I found a way to represent collatz conjecture as an equation"
@@ -9,14 +9,14 @@ usemathjax: true
 
 today i found a way to represent the collatz conjecture(which was an algorithm till now) as an equation.
 
-if we define $y$ in terms of $x$, the initial value of the Collatz conjecture algorithm:
+if we define $y$ in terms of $x \in \mathbb{N}$, the initial value of the Collatz conjecture algorithm:
 
 <div>
 $$ x = 2^p \cdot y $$
 </div>
 where,  
     $ p \in \mathbb{N}_0 $,  
-    $ y \in \mathbb{N}_0 $  
+    $ y \in \mathbb{N} $  
 
 then, we can represent Collatz conjecture as:
 
