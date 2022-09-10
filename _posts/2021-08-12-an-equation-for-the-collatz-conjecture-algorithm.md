@@ -25,7 +25,7 @@ $$ 3^n x + \displaystyle \sum_{i=0}^n{3^i \cdot 2^{\sum_{j=0}^{n-i-1} a_j}} = 2^
 
 </div>
 where,  
-    $ a \in \mathbb{Z}^n $,  
+    $ a \in \mathbb{N}_0^n $,  
     $ n \in \mathbb{N} $,  
     $ k \in \mathbb{N} $,  
     $ a_0 := p $  
