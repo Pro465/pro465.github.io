@@ -2,9 +2,8 @@
 layout: default
 title: "what is the yin and yan of computation?"
 description: "does duplication and deduplication qualify?"
-date: 2021-08-12 22:12:00 +0530
+date: 2023-06-26 22:12:00 +0530
 categories: algorithm maths CS turing-completeness
-usemathjax: true
 ---
 
 Ever since i saw what the simplest of machines could do, i yearned for the universal simplicity - machines beautifully balancing simplicity with universality, like tightrope artists balancing gravity with reaction forces. 
