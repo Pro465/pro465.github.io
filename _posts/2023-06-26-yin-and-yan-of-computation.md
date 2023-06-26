@@ -8,7 +8,7 @@ categories: algorithm maths CS turing-completeness
 
 Ever since i saw what the simplest of machines could do, i yearned for the universal simplicity - machines beautifully balancing simplicity with universality, like tightrope artists balancing gravity with reaction forces. 
 
-so when i first discovered (Xeroxer)[https://esolangs.org/wiki/Xeroxer], a seemingly easy but upon deeper look non-trivial problem, i quickly was thinking of it day and night, trying to simulate different computational mdels in it. and i succeeded at last, showing that it was one of those i yearned...
+so when i first discovered [Xeroxer](https://esolangs.org/wiki/Xeroxer), a seemingly easy but upon deeper look non-trivial problem, i quickly was thinking of it day and night, trying to simulate different computational mdels in it. and i succeeded at last, showing that it was one of those i yearned...
 
 the language is quite simple, here is it:
 > cpyjmp len, offset | (copy the instructions at the address ip-len..ip (exclusive) to the end of the program, then jump to ip + offset + 1).
