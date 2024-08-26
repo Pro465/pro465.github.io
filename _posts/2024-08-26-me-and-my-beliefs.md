@@ -8,7 +8,7 @@ categories: politics personal
 
 Let's get straight to the point: I'm a far-right (but anti-fascist, I'll elaborate later in this post) 45-yo God-fearing man with the greatest love for this earth.
 
-You may be screaming "but Proloy, you can't be both far-right and anti-fascist!" and then I'd know that you were right, 
+You may be screaming "but Proloy, you can't be both far-right and anti-fascist!" and then I'd know that you would be right, 
 IF the years of centrist and leftist propaganda that you were fed were actually true. That is to say, you would be quite wrong, 
 wrong to the point you could easily be mistaken as delusional in my eyes. But fear not, my friend, for I am here and willing to show you the light of God.
 
