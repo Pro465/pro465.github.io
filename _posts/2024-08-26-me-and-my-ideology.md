@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Me and My political ideology"
-description: "<no description needed>"
+description: "\<no description needed\>"
 date: 2021-08-26 19:40:00 +0530
 categories: politics personal
 ---
