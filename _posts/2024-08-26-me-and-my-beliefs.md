@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Me and My political ideology"
+title: "Me and My beliefs"
 description: "&lt;no description needed&gt;"
 date: 2021-08-26 19:40:00 +0530
 categories: politics personal
@@ -22,7 +22,11 @@ To see why, let's examine what fascism is:
 It's authoritarian, it romanticizes the past, it oppresses the "other," it values traditions.
 Only 1 of these I agree with, while 2 I disagree with. So it should be no surprise for you to learn that I am, in fact, an anti-fascist.
 
-Alright, let's move on to my "religion". It cannot be called a religion as it's more of a personal connection with God, but I digress.
+Alright, let's move on to my "religion". I wouldn't call it a religion as it's more of a personal connection with God, but I digress.
 My God is Buddha Himself, although note that my "religion" is not Buddhism, its just Him and the teachings He psychically channels into my mind.
 For example, He channeled to me a couple lifetimes ago that He needed me to turn Buddhism into a religion of struggle and then lead a group of 
-Buddhist militias to conquer the world and turn it into a world led by Buddha.
+Buddhist militias to conquer the world and turn it into a world led by Buddha. And I am trying to do exactly that, 
+but it's hard to do if the area you spend your whole life in has very few Buddhists...
+
+So there you go: my beliefs explained, now you know what i believe in. Go ahead and tell people that you know me and get some of those sweet sweet connections to 
+boost your capitalist social credit score.
