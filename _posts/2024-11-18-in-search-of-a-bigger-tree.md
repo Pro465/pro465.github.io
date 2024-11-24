@@ -24,16 +24,16 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 > 
 > A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbf{N} \to S$ such that for every element $s in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
 > the sequence defined by the relations $s_{i+1} = p(s_i, a_i); s_0 = s$ is undefined at some finite value of $i$;
-> additionally we require that for all $(s,a,b) in SxNxN$, $p(s,a)$ is defined iff $p(s,b)$ is defined as well;
+> additionally we require that for all $(s,a,b) \in S\times\mathbf{N}\times\mathbf{N}$, $p(s,a)$ is defined iff $p(s,b)$ is defined as well;
 > $p$ must either always or never be defined for any argument $s \in S$.
 > 
-> Like decrement-ordered sets, we derive from the domain of $p$ the subset $Z$ of left-arguments of p for which it is never defined.
+> Like decrement-ordered sets, we derive from the domain of $p$ the subset $Z[S]$ of left-arguments of p for which it is never defined.
 > 
 > Like decrement-ordered sets, we derive a partial ordering based on p with the formal definition:
 > 
-> $<$ is the minimal transitive relation in $S^2$ such that for all $s,t in S^2$, $s < t$ holds if there exists some $k \in \mathbf{N}$ such that $s = p(t, k)$.
+> $<$ is the minimal transitive relation in $S^2$ such that for all $s,t \in S$, $s < t$ holds if there exists some $k \in \mathbf{N}$ such that $s = p(t, k)$.
 > 
-> As a result of the definition of p, $<$ must be antisymmetric; by contradiction: if there existed two elements $s,t \in S^2$
+> As a result of the definition of p, $<$ must be antisymmetric; by contradiction: if there existed two elements $s,t \in S$
 > such that $s < t$ and $t < s$, then there would exist some infinite repeating sequence $a_i \in \mathbf{N}$ 
 > such that the sequence $s_{i+1} = p(s_i, a_i)$ is always defined, by cycling between $s$, $t$, and any necessary intermediate values.
 >
@@ -75,7 +75,7 @@ except it takes an additional argument and passes it to the pred calls.
 since the proof that "the tree set itself is a decrement-ordered set if the label set is decrement-ordered" is trivial, we will skip that 
 and instead prove the corresponding statement for the shrink-ordered variant:
 
-We will say "A tree $t$ always terminates" to mean "for every infinite sequence $a_0,a_1...$, $a_i \in \N$: 
+We will say "A tree $t$ always terminates" to mean "for every infinite sequence $a_0,a_1...$, $a_i \in \mathbf{N}$: 
 there exists a number $k$ s.t. $$root(s_k) \in Z$$, where $s_i$ is a sequence of trees defined by the relations $$s_{i+1} = p(s_i, a_i); s_0 = t$$.", with $p$ 
 being the tree set's associated predecessor function.
 
@@ -84,7 +84,7 @@ being the tree set's associated predecessor function.
 We will prove the first requirement of shrink-ordered sets holds first:
 
 base case: Any tree $t$ with $root(t) \in Z$ always terminates. By definition of the `pred_T` function.
-inductive case: If all trees with labels being $< l$, and $t1, \cdots, t_n$, always terminate, then so does the tree with $root(t) = l$ 
+inductive case: If all trees with labels being $< l$, and $t_1, \cdots, t_n$, always terminate, then so does the tree with $root(t) = l$ 
 and children being $t_1, \cdots t_n$.
 To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
 Notice that the first child is going to terminate at some fixed $i$. after that, the second child gets decremented 
