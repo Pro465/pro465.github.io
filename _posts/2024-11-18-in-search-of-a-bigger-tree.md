@@ -4,6 +4,7 @@ title: "In search of a bigger Tree"
 description: "i got interested in googology, so here goes"
 date: 2024-11-18 22:12:00 +0530
 categories: algorithm maths CS googology
+usemathjax: true
 ---
 
 A few weeks ago I got awfully interested in googology, and a few days ago i had invented a new notation to denote large numbers based on trees, so here it is:
