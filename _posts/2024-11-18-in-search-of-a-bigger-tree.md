@@ -22,19 +22,19 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 > Also derived from $p$ is a partial ordering on $S$ where we define $Ord(s)$ to be that whole number n such that $p^n(s) \in Z$;
 > for all $a,b \in S$, $Ord(a) < Ord(b) \iff a < b$
 > 
-> A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbf{N} \to S$ such that for every element $s \in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
+> A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbb{N} \to S$ such that for every element $s \in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
 > the sequence defined by the relations $s_{i+1} = p(s_i, a_i); s_0 = s$ is undefined at some finite value of $i$;
-> additionally we require that for all $(s,a,b) \in S\times\mathbf{N}\times\mathbf{N}$, $p(s,a)$ is defined iff $p(s,b)$ is defined as well;
+> additionally we require that for all $(s,a,b) \in S\times\mathbb{N}\times\mathbb{N}$, $p(s,a)$ is defined iff $p(s,b)$ is defined as well;
 > $p$ must either always or never be defined for any argument $s \in S$.
 > 
 > Like decrement-ordered sets, we derive from the domain of $p$ the subset $Z[S]$ of left-arguments of p for which it is never defined.
 > 
 > Like decrement-ordered sets, we derive a partial ordering based on p with the formal definition:
 > 
-> $<$ is the minimal transitive relation in $S^2$ such that for all $s,t \in S$, $s < t$ holds if there exists some $k \in \mathbf{N}$ such that $s = p(t, k)$.
+> $<$ is the minimal transitive relation in $S^2$ such that for all $s,t \in S$, $s < t$ holds if there exists some $k \in \mathbb{N}$ such that $s = p(t, k)$.
 > 
 > As a result of the definition of p, $<$ must be antisymmetric; by contradiction: if there existed two elements $s,t \in S$
-> such that $s < t$ and $t < s$, then there would exist some infinite repeating sequence $a_i \in \mathbf{N}$ 
+> such that $s < t$ and $t < s$, then there would exist some infinite repeating sequence $a_i \in \mathbb{N}$ 
 > such that the sequence $s_{i+1} = p(s_i, a_i)$ is always defined, by cycling between $s$, $t$, and any necessary intermediate values.
 >
 > we can derive decrement-ordered sets to be a special case of shrink-ordered sets over infinite repetitions of a single natural number $m$. 
@@ -75,11 +75,11 @@ except it takes an additional argument and passes it to the pred calls.
 since the proof that "the tree set itself is a decrement-ordered set if the label set is decrement-ordered" is trivial, we will skip that 
 and instead prove the corresponding statement for the shrink-ordered variant:
 
-We will say "A tree $t$ always terminates" to mean "for every infinite sequence $a_0,a_1...$, $a_i \in \mathbf{N}$: 
+We will say "A tree $t$ always terminates" to mean "for every infinite sequence $a_0,a_1...$, $a_i \in \mathbb{N}$: 
 there exists a number $k$ s.t. $$root(s_k) \in Z$$, where $s_i$ is a sequence of trees defined by the relations $$s_{i+1} = p(s_i, a_i); s_0 = t$$.", with $p$ 
 being the tree set's associated predecessor function.
 
-# actual proof
+## actual proof
 
 We will prove the first requirement of shrink-ordered sets holds first:
 
@@ -100,3 +100,55 @@ First, let's take a tree $t$, and let's say `pred_T(t, n)` is undefined for some
 Now let's take another number $m$. then, by definition, `pred_T(t, m)` is still undefined. Since $m$ and $n$ are arbitrary, we can swap them to prove the converse,
 thus proving the statement "`pred_T(t, n)` is undefined iff `pred_T(t, m)` is undefined, for all natural numbers $m$ and $n$"
 
+# Example implementation
+
+The following program simulates a tree with label set being $\mathbb{N} \cup {\omega}$ with its predecessor being defined as: 
+$$p(\omega, n)=n,$$
+$$p(m, n)=m-1, 0<m \in \mathbb{N}.$$
+
+(`-1` in the program represents $\omega$.)
+
+```py
+from copy import deepcopy
+
+def map_children(t, f):
+    return t[:1]+[f(c) for c in t[1:]]
+
+def reset_label(a, x):
+    return [x]+[reset_label(c, x) for c in a[1:]]
+
+def replace_leaves(a, x):
+    f=lambda c: replace_leaves(c, x)
+    if len(a) == 1: return deepcopy(x)
+    else: return map_children(a, f)
+
+def reset_tree(t1, t2):
+    f=lambda c: reset_tree(c, t2)
+    return replace_leaves(t2, map_children(t1, f))
+
+def pn(a, n):
+    if a == 0: return None
+    return n if a == -1 else a-1
+
+def p(t, n):
+    pred=pn(t[0], n)
+    if pred is None: return False
+    i=-1
+    for j in range(1, len(t)):
+        if p(t[j], n):
+            i=j
+            break
+    if i>=0:
+        for j in range(1, i):
+            t[j]=reset_label(t[j], pred)
+    else:
+        d=reset_label(t, pred)
+        t[:]=reset_tree(d, d)
+    return True
+
+n=0
+a=[-1, [-1]]
+while p(a, n):
+    print(a, n)
+    n+=1
+```
