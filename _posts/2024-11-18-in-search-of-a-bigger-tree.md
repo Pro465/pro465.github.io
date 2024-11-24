@@ -17,12 +17,12 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 > A decrement-ordered set is a set $S$ equipped with a partial function $p : S -> S$ such that 
 > for every element $s in S$, there exists some whole number $n$ such that $p^n(s)$ is not an element of the domain of $p$.
 > 
-> Derived from the domain of $p$, the subset $Z$ is defined as $S - D(p)$; the set of elements not in the domain of $p$, here known as the set of "Zero" elements of $S$.
+> Derived from the domain of $p$, the subset $Z[S]$ is defined as $S - D(p)$; the set of elements not in the domain of $p$, here known as the set of "Zero" elements of $S$.
 > 
 > Also derived from $p$ is a partial ordering on $S$ where we define $Ord(s)$ to be that whole number n such that $p^n(s) \in Z$;
 > for all $a,b \in S$, $Ord(a) < Ord(b) \iff a < b$
 > 
-> A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbf{N} \to S$ such that for every element $s in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
+> A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbf{N} \to S$ such that for every element $s \in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
 > the sequence defined by the relations $s_{i+1} = p(s_i, a_i); s_0 = s$ is undefined at some finite value of $i$;
 > additionally we require that for all $(s,a,b) \in S\times\mathbf{N}\times\mathbf{N}$, $p(s,a)$ is defined iff $p(s,b)$ is defined as well;
 > $p$ must either always or never be defined for any argument $s \in S$.
