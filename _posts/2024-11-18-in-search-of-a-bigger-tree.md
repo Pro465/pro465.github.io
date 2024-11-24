@@ -14,7 +14,7 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 
 (from Discord@TARDIInsanity)
 
-> A decrement-ordered set is a set $S$ equipped with a partial function $p : S -> S$ such that 
+> A decrement-ordered set is a set $S$ equipped with a partial function $p : S \to S$ such that 
 > for every element $s in S$, there exists some whole number $n$ such that $p^n(s)$ is not an element of the domain of $p$.
 > 
 > Derived from the domain of $p$, the subset $Z[S]$ is defined as $S - D(p)$; the set of elements not in the domain of $p$, here known as the set of "Zero" elements of $S$.
