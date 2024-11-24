@@ -22,7 +22,7 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 > Also derived from $p$ is a partial ordering on $S$ where we define $Ord(s)$ to be that whole number n such that $p^n(s) \in Z$;
 > for all $a,b \in S$, $Ord(a) < Ord(b) \iff a < b$
 > 
-> A shrink-ordered set is a set $S$ equipped with a partial function $p : S \into N \to S$ such that for every element $s in S$ and every infinite sequence $a_0,a_1...: a_i in N$: 
+> A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbf{N} \to S$ such that for every element $s in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
 > the sequence defined by the relations $s_{i+1} = p(s_i, a_i); s_0 = s$ is undefined at some finite value of $i$;
 > additionally we require that for all $(s,a,b) in SxNxN$, $p(s,a)$ is defined iff $p(s,b)$ is defined as well;
 > $p$ must either always or never be defined for any argument $s \in S$.
@@ -31,10 +31,10 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 > 
 > Like decrement-ordered sets, we derive a partial ordering based on p with the formal definition:
 > 
-> $<$ is the minimal transitive relation in $S^2$ such that for all $s,t in S^2$, $s < t$ holds if there exists some $k \in \N$ such that $s = p(t, k)$.
+> $<$ is the minimal transitive relation in $S^2$ such that for all $s,t in S^2$, $s < t$ holds if there exists some $k \in \mathbf{N}$ such that $s = p(t, k)$.
 > 
 > As a result of the definition of p, $<$ must be antisymmetric; by contradiction: if there existed two elements $s,t \in S^2$
-> such that $s < t$ and $t < s$, then there would exist some infinite repeating sequence $a_i \in \N$ 
+> such that $s < t$ and $t < s$, then there would exist some infinite repeating sequence $a_i \in \mathbf{N}$ 
 > such that the sequence $s_{i+1} = p(s_i, a_i)$ is always defined, by cycling between $s$, $t$, and any necessary intermediate values.
 >
 > we can derive decrement-ordered sets to be a special case of shrink-ordered sets over infinite repetitions of a single natural number $m$. 
