@@ -104,6 +104,7 @@ thus proving the statement "`pred_T(t, n)` is undefined iff `pred_T(t, m)` is un
 
 The following program simulates a tree with label set being $\mathbb{N} \cup {\omega}$ with its predecessor being defined as: 
 $$p(\omega, n)=n,$$
+
 $$p(m, n)=m-1, 0<m \in \mathbb{N}.$$
 
 (`-1` in the program represents $\omega$.)
