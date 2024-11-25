@@ -95,9 +95,9 @@ and children being $t_1, \cdots t_n$.
 
 To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
 Notice that the first child is going to terminate at some fixed $i$. after that, the second child gets decremented 
-and all of the first child's nodes are resetted to some value less than $l$, which also terminate after a finite number of steps, by the inductive hyothesis.
+and all of the first child's nodes are reset to some value less than $l$, which also terminate after a finite number of steps, by the inductive hyothesis.
 So essentially, the second child gets an infinite subseries of the series, with long but finite jumps between each chosen number.
-By definition, the second child also must also terminate. and so the third child gets decrement, by a similar reasoning, and so on.
+By definition, the second child also must also terminate. and so the third child gets decremented, by a similar reasoning, and so on.
 Eventually, all the nodes' labels except the root's transform into members of $Z$, and then it resets the tree in a way that the nodes' labels now become $pred(root(t))$,
 which always terminates by the inductive hypothesis.
 
