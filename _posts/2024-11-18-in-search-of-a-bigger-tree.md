@@ -15,12 +15,12 @@ the trees are labelled, so we need a valid set of labels. the rules for them are
 (from Discord@TARDIInsanity)
 
 > A decrement-ordered set is a set $S$ equipped with a partial function $p : S \to S$ such that 
-> for every element $s in S$, there exists some whole number $n$ such that $p^n(s)$ is not an element of the domain of $p$.
+> for every element $s \in S$, there exists some whole number $n$ such that $p^n(s)$ is not an element of the domain of $p$.
 > 
 > Derived from the domain of $p$, the subset $Z[S]$ is defined as $S - D(p)$; the set of elements not in the domain of $p$, here known as the set of "Zero" elements of $S$.
 > 
-> Also derived from $p$ is a partial ordering on $S$ where we define $Ord(s)$ to be that whole number n such that $p^n(s) \in Z$;
-> for all $a,b \in S$, $Ord(a) < Ord(b) \iff a < b$
+> Also derived from $p$ is a partial ordering on $S$ where we define $Ord(s)$ to be that whole number n such that $p^n(s) \in Z$.
+> Then for all $a,b \in S$, $Ord(a) < Ord(b) \iff a < b$
 > 
 > A shrink-ordered set is a set $S$ equipped with a partial function $p : S \times \mathbb{N} \to S$ such that for every element $s \in S$ and every infinite sequence $a_0,a_1...: a_i \in N$: 
 > the sequence defined by the relations $s_{i+1} = p(s_i, a_i); s_0 = s$ is undefined at some finite value of $i$;
@@ -46,23 +46,28 @@ Whew! That was a long quotation. Thankfully the rest of the post is short (for n
 The tree set itself is a decrement-ordered set, whose labels are members of a particular decrement-ordered set, and its predecessor function is defined as follows:
 
 ```
+function releaf(base, template) -> T
+  return a copy of base except every leaf is replaced by template
+end
+
 function replace(t: T, r: T) -> T
     return t but each node's label is replaced by pred_S(root(r))
 end
 
+function replace_with_tree(t: T, r: T) -> T 
+    return releaf(r, <t but each child c is replaced by replace_with_tree(c, r)>)
+end
+
 function pred_T(t: T) -> Maybe<T>
-    if root(T) in Z: return None
+    if root(T) in Z[T]: return None
     for each index-child subtree pair (i, c) of t:
         if pred_T(c) is not None:
-            t[i] = pred_S(c)
+            t[i] = pred_T(c)
             for each index-child subtree pair (j, c) of t before c (j < i)
-                replace each node label in c by pred_T(root(t))
+                t[j]=replace(c, t)
             return t
-    let oldtree = replace(t, t)
-    let s(n) = the subtree of t (the current one) with the node n as its root
-    replace each node of t (starting from the bottom and working towards the top)
-    by the tree formed from taking oldtree and replacing its leaves by replace(s(n), t)
-    return t
+    t = replace(t, t)
+    return replace_with_tree(t, t)
 end
 ```
 
@@ -84,8 +89,10 @@ being the tree set's associated predecessor function.
 We will prove the first requirement of shrink-ordered sets holds first:
 
 base case: Any tree $t$ with $root(t) \in Z$ always terminates. By definition of the `pred_T` function.
+
 inductive case: If all trees with labels being $< l$, and $t_1, \cdots, t_n$, always terminate, then so does the tree with $root(t) = l$ 
 and children being $t_1, \cdots t_n$.
+
 To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
 Notice that the first child is going to terminate at some fixed $i$. after that, the second child gets decremented 
 and all of the first child's nodes are resetted to some value less than $l$, which also terminate after a finite number of steps, by the inductive hyothesis.
