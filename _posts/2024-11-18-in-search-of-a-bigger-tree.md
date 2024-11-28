@@ -77,29 +77,52 @@ except it takes an additional argument and passes it to the pred calls.
 # Proofs of the above claims
 
 ## notes
-since the proof that "the tree set itself is a decrement-ordered set if the label set is decrement-ordered" is trivial, we will skip that 
-and instead prove the corresponding statement for the shrink-ordered variant:
+since the proof that "the tree set itself is a decrement-ordered set if the label set is decrement-ordered" follows directly from 
+the corresponding statement for the shrink-ordered variant (as the former is a special case of the latter), we will only prove the latter.
 
 We will say "A tree $t$ always terminates" to mean "for every infinite sequence $a_0,a_1...$, $a_i \in \mathbb{N}$: 
 there exists a number $k$ s.t. $$root(s_k) \in Z$$, where $s_i$ is a sequence of trees defined by the relations $$s_{i+1} = p(s_i, a_i); s_0 = t$$.", with $p$ 
 being the tree set's associated predecessor function.
 
+We will use $app(t, l)$ to mean the number of appearances of nodes with label $l$ in $t$.
+
 ## actual proof
 
-We will prove the first requirement of shrink-ordered sets holds first:
+We will prove the first requirement of shrink-ordered sets holds first. But first we need some facts to help us:
 
+1. There exists a linear extension $<*$ to the partial order $<$ on $S$. By (Szpilrajn extension theorem)[https://en.wikipedia.org/wiki/Szpilrajn_extension_theorem].
+2. We can define the $max(t)$ now, which returns the maximum node label with respect to the above order.
+
+Now we can proceed:
+
+**Lemma**: If all trees $t$ with $max(t) <* l$ always terminate, then so do all trees with $max(t) \leq* l$.
+Proof:
+
+Base case: All trees $t$ with $max(t) \leq* l$ and $app(t, l) = 0$ always terminate. By assumption and the fact that these imply $max(t) <* l$.
+
+Inductive case 1: If all trees $t$ with $max(t) \leq* l$ and $app(t, l) < k$ always terminate, then so does any tree with
+$root(t) = max(t) = l$ and $app(t, l) \leq k$.
+To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
+Notice that the first child $c_1$ is going to terminate at some fixed $i$ (because of the inductive hypothesis and the fact that the root 
+having label $l$ means $app(c, l) < k$ for every child $c$.) after that, the second child gets decremented 
+and all of the first child's nodes are reset to some value less than $l$, which also terminate after a finite number of steps, by the inductive hypothesis.
+So essentially, the second child gets an infinite subsequence of the sequence, with long but finite jumps between each chosen number.
+By definition, the second child also must also terminate. And then the third child gets decremented, by a similar reasoning, and so on.
+Eventually, all the nodes' labels except the root's transform into members of $Z[S]$, and then it resets the tree in a way that the nodes' labels now become $< l$,
+which always terminates by the inductive hypothesis.
+
+Inductive case 2: If some trees $t_1, \cdots, t_n$ with $max(t_i) \leq* l$ always terminate, then so does the tree with
+$root(t) <* l$ and children $t_1, \cdots, t_n$.
+this one can be justified by an argument similar to the above.
+
+QED.
+
+**Main theorem**: All trees always terminate.
+Proof:
 base case: Any tree $t$ with $root(t) \in Z$ always terminates. By definition of the `pred_T` function.
 
-inductive case: If all trees with labels being $< l$, and $t_1, \cdots, t_n$, always terminate, then so does the tree with $root(t) = l$ 
-and children being $t_1, \cdots t_n$.
-
-To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
-Notice that the first child is going to terminate at some fixed $i$. after that, the second child gets decremented 
-and all of the first child's nodes are reset to some value less than $l$, which also terminate after a finite number of steps, by the inductive hyothesis.
-So essentially, the second child gets an infinite subseries of the series, with long but finite jumps between each chosen number.
-By definition, the second child also must also terminate. and so the third child gets decremented, by a similar reasoning, and so on.
-Eventually, all the nodes' labels except the root's transform into members of $Z$, and then it resets the tree in a way that the nodes' labels now become $pred(root(t))$,
-which always terminates by the inductive hypothesis.
+inductive case: If all trees $t$ with $max(t) <* l$ and terminate, then so do all trees with $max(t) \leq* l$. By Lemma 1.
+QED
 
 Now that that's done, We will prove the second requirement holds too:
 
