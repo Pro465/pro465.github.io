@@ -90,17 +90,17 @@ We will use $app(t, l)$ to mean the number of appearances of nodes with label $l
 
 We will prove the first requirement of shrink-ordered sets holds first. But first we need some facts to help us:
 
-1. There exists a linear extension $<*$ to the partial order $<$ on $S$. By (Szpilrajn extension theorem)[https://en.wikipedia.org/wiki/Szpilrajn_extension_theorem].
+1. There exists a linear extension $<^*$ to the partial order $<$ on $S$. By (Szpilrajn extension theorem)[https://en.wikipedia.org/wiki/Szpilrajn_extension_theorem].
 2. We can define the $max(t)$ now, which returns the maximum node label with respect to the above order.
 
 Now we can proceed:
 
-**Lemma**: If all trees $t$ with $max(t) <* l$ always terminate, then so do all trees with $max(t) \leq* l$.
+**Lemma**: If all trees $t$ with $max(t) <^* l$ always terminate, then so do all trees with $max(t) \leq^* l$.
 Proof:
 
-Base case: All trees $t$ with $max(t) \leq* l$ and $app(t, l) = 0$ always terminate. By assumption and the fact that these imply $max(t) <* l$.
+Base case: All trees $t$ with $max(t) \leq^* l$ and $app(t, l) = 0$ always terminate. By assumption and the fact that these imply $max(t) <^* l$.
 
-Inductive case 1: If all trees $t$ with $max(t) \leq* l$ and $app(t, l) < k$ always terminate, then so does any tree with
+Inductive case 1: If all trees $t$ with $max(t) \leq^* l$ and $app(t, l) < k$ always terminate, then so does any tree with
 $root(t) = max(t) = l$ and $app(t, l) \leq k$.
 To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
 Notice that the first child $c_1$ is going to terminate at some fixed $i$ (because of the inductive hypothesis and the fact that the root 
@@ -111,8 +111,8 @@ By definition, the second child also must also terminate. And then the third chi
 Eventually, all the nodes' labels except the root's transform into members of $Z[S]$, and then it resets the tree in a way that the nodes' labels now become $< l$,
 which always terminates by the inductive hypothesis.
 
-Inductive case 2: If some trees $t_1, \cdots, t_n$ with $max(t_i) \leq* l$ always terminate, then so does the tree with
-$root(t) <* l$ and children $t_1, \cdots, t_n$.
+Inductive case 2: If some trees $t_1, \cdots, t_n$ with $max(t_i) \leq^* l$ always terminate, then so does the tree with
+$root(t) <^* l$ and children $t_1, \cdots, t_n$.
 this one can be justified by an argument similar to the above.
 
 QED.
@@ -121,7 +121,7 @@ QED.
 Proof:
 base case: Any tree $t$ with $root(t) \in Z$ always terminates. By definition of the `pred_T` function.
 
-inductive case: If all trees $t$ with $max(t) <* l$ and terminate, then so do all trees with $max(t) \leq* l$. By Lemma 1.
+inductive case: If all trees $t$ with $max(t) <^* l$ and terminate, then so do all trees with $max(t) \leq^* l$. By Lemma 1.
 QED
 
 Now that that's done, We will prove the second requirement holds too:
