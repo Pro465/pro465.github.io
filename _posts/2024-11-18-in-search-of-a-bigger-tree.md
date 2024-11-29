@@ -95,13 +95,15 @@ We will prove the first requirement of shrink-ordered sets holds first. But firs
 
 Now we can proceed:
 
-**Lemma**: If all trees $t$ with $max(t) <^* l$ always terminate, then so do all trees with $max(t) \leq^* l$.
+**Theorem**: All trees always terminate.
+
 Proof:
 
-Base case: All trees $t$ with $max(t) \leq^* l$ and $app(t, l) = 0$ always terminate. By assumption and the fact that these imply $max(t) <^* l$.
+Base case: Any tree $t$ with $root(t) \in Z$ always terminates. By definition of the `pred_T` function.
 
-Inductive case 1: If all trees $t$ with $max(t) \leq^* l$ and $app(t, l) < k$ always terminate, then so does any tree with
-$root(t) = max(t) = l$ and $app(t, l) \leq k$.
+Inductive case: If all trees $t$ with $max(t) <^* l$ always terminate, 
+and if some trees $t_1, \cdots, t_n$ with $max(t_i) \leq^* l$ always terminate, then so does the tree with
+$root(t) \leq^* l$ and children $t_1, \cdots, t_n$.
 To see why, take some infinite sequence of natural numbers $a_1, a_2, \cdots$.
 Notice that the first child $c_1$ is going to terminate at some fixed $i$ (because of the inductive hypothesis and the fact that the root 
 having label $l$ means $app(c, l) < k$ for every child $c$.) after that, the second child gets decremented 
@@ -111,18 +113,8 @@ By definition, the second child also must also terminate. And then the third chi
 Eventually, all the nodes' labels except the root's transform into members of $Z[S]$, and then it resets the tree in a way that the nodes' labels now become $< l$,
 which always terminates by the inductive hypothesis.
 
-Inductive case 2: If some trees $t_1, \cdots, t_n$ with $max(t_i) \leq^* l$ always terminate, then so does the tree with
-$root(t) <^* l$ and children $t_1, \cdots, t_n$.
-this one can be justified by an argument similar to the above.
-
 QED.
 
-**Main theorem**: All trees always terminate.
-Proof:
-base case: Any tree $t$ with $root(t) \in Z$ always terminates. By definition of the `pred_T` function.
-
-inductive case: If all trees $t$ with $max(t) <^* l$ and terminate, then so do all trees with $max(t) \leq^* l$. By Lemma 1.
-QED
 
 Now that that's done, We will prove the second requirement holds too:
 
