@@ -90,7 +90,7 @@ We will use $app(t, l)$ to mean the number of appearances of nodes with label $l
 
 We will prove the first requirement of shrink-ordered sets holds first. But first we need some facts to help us:
 
-1. There exists a linear extension $<^*$ to the partial order $<$ on $S$. By (Szpilrajn extension theorem)[https://en.wikipedia.org/wiki/Szpilrajn_extension_theorem].
+1. There exists a linear extension $<^*$ to the partial order $<$ on $S$. By [Szpilrajn extension theorem](https://en.wikipedia.org/wiki/Szpilrajn_extension_theorem).
 2. We can define the $max(t)$ now, which returns the maximum node label with respect to the above order.
 
 Now we can proceed:
