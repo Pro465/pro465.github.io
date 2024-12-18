@@ -46,7 +46,7 @@ Whew! That was a long quotation. Thankfully the rest of the post is short (for n
 The tree set itself is a decrement-ordered set, whose labels are members of a particular decrement-ordered set, and its predecessor function is defined as follows:
 
 ```
-function releaf(base, template) -> T
+function releaf(base: T, template: T) -> T
   return a copy of base except every leaf is replaced by template
 end
 
@@ -59,7 +59,7 @@ function replace_with_tree(t: T, r: T) -> T
 end
 
 function pred_T(t: T) -> Maybe<T>
-    if root(T) in Z[T]: return None
+    if root(T) in Z[S]: return None
     for each index-child subtree pair (i, c) of t:
         if pred_T(c) is not None:
             t[i] = pred_T(c)
